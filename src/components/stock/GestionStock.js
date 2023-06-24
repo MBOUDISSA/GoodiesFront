@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../../assets/styles/App.css';
 
 function GestionStock() {
     const [products, setProducts] = useState([]);
