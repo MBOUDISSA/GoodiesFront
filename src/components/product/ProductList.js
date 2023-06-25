@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/styles/App.css';
+import '../../assets/styles/ProductList.css';
 
 function ProductList() {
     const [products, setProducts] = useState([]);
@@ -19,36 +21,22 @@ function ProductList() {
     }, []);
 
     return (
-        <div>
-            <h1>Liste des produits</h1>
-            <table>
-                <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Statut</th>
-                    <th>Quantité</th>
-                    <th>Description</th>
-                    <th>Image</th>
-                    <th>Prix</th>
-                    <th>Catégorie</th>
-                </tr>
-                </thead>
-                <tbody>
+        <div className="product-list">
+            <h1>Boutique</h1>
+            <div className="card-container">
                 {products.map((product) => (
-                    <tr key={product.id}>
-                        <td>{product.name}</td>
-                        <td>{product.status}</td>
-                        <td>{product.quantity}</td>
-                        <td>{product.description}</td>
-                        <td>
-                            <img src={product.picture} alt={product.name} width="50" height="50" />
-                        </td>
-                        <td>{product.price}</td>
-                        <td>{product.category}</td>
-                    </tr>
+                    <Link key={product.name} to={`/product/${encodeURIComponent(product.name)}`} className="product-card">
+                        <img src={`data:image/jpeg;base64,${product.picture}`} alt={product.name} className="product-image" />
+                        <div className="product-details">
+                            <h2 className="product-title">{product.name}</h2>
+                            <p>{product.description}</p>
+                            <p>Prix : {product.price}</p>
+                            <p>Catégorie : {product.category}</p>
+                            <button>Voir plus</button>
+                        </div>
+                    </Link>
                 ))}
-                </tbody>
-            </table>
+            </div>
         </div>
     );
 }

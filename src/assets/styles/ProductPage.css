@@ -1,0 +1,78 @@
+/* ProductPage.css */
+.product-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.product-page .product-container-shop {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.product-page .product-picture-shop {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.product-page .product-details-shop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.product-page .product-details-shop h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-page .product-details-shop .label {
+    font-weight: bold;
+}
+
+.product-page .product-details-shop .status-shop,
+.product-page .product-details-shop .quantity-shop,
+.product-page .product-details-shop .description-shop,
+.product-page .product-details-shop .price-shop {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+.product-page .product-details-shop .buy-button-shop {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.product-page .product-details-shop .buy-button-shop:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .product-page .product-container-shop {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-page .product-details-shop {
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-page .product-details-shop .price-shop {
+        margin-top: 10px;
+    }
+}
