@@ -1,0 +1,89 @@
+/* App.css */
+/* App.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+
+.label-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.label-container label {
+    flex: 1;
+}
+
+.select-container,
+.input-container {
+    margin-top: 5px;
+}
+
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #555;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.result-container {
+    margin-top: 20px;
+}
+
+.result-container h3,
+.result-container p {
+    margin: 5px 0;
+    color: #333;
+}
+
+@media (max-width: 480px) {
+    /* Responsive styles for small screens */
+    .container {
+        padding: 10px;
+    }
+}

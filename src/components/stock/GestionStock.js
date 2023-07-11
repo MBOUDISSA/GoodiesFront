@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../assets/styles/App.css';
-
+import '../../assets/styles/GestionStock.css';
 function GestionStock() {
     const [products, setProducts] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState('');
@@ -100,33 +100,35 @@ function GestionStock() {
 
             {selectedProduct && (
                 <div>
-                    <h3>Ajouter au stock</h3>
                     <label>
                         Quantité ajoutée:
                         <input type="number" value={quantiteAjoutee} onChange={handleQuantiteAjouteeChange} />
                     </label>
                     <br />
-                    <label>
-                        Type de stock:
-                        <input
-                            type="radio"
-                            name="stockType"
-                            value="reel"
-                            checked={reelOrReserve}
-                            onChange={handleReelOrReserveChange}
-                        />
-                        Réel
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            name="stockType"
-                            value="reserve"
-                            checked={!reelOrReserve}
-                            onChange={handleReelOrReserveChange}
-                        />
-                        Réservé
-                    </label>
+                    <h3>Type de stock: </h3>
+                    <div className="radio-container">
+                        <div className="radio-label">
+                            <input
+                                type="radio"
+                                name="stockType"
+                                value="reel"
+                                checked={reelOrReserve}
+                                onChange={handleReelOrReserveChange}
+                            />
+                            <label>Réel</label>
+                        </div>
+                        <div className="radio-label">
+                            <input
+                                type="radio"
+                                name="stockType"
+                                value="reserve"
+                                checked={!reelOrReserve}
+                                onChange={handleReelOrReserveChange}
+                            />
+                            <label>Réservé</label>
+                        </div>
+                    </div>
+
                     <br />
                     <button onClick={handleAjouterAuStock}>Ajouter au stock</button>
                 </div>
